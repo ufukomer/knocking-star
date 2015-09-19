@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+    <!-- Web Components -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="elements/elements.html">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css">
+    <style is="custom-style">
+        #center {
+            @apply(--layout-vertical);
+            @apply(--layout-center-center);
+        }
+    </style>
+</head>
+<body class="fullbleed layout vertical" unresolved>
+    <div class="header" id="center">
+        <img class="header-logo" src="images/knockingstar.png" alt="Logo">
+        <h1 class="header-title">Knocking Star</h1>
+        <h2 class="header-subtitle">A little about the reality of universe</h2>
+        <form class="search">
+            <input name="q" class="search-field" type="text" id="search-field" autocomplete="off">
+            <label class="search-label" for="search-field">
+                <span class="search-label-content">Search...</span>
+            </label>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
