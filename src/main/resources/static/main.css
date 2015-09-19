@@ -130,3 +130,25 @@ body {
     -webkit-transform: scale3d(38, 38, 1);
     transform: scale3d(38, 38, 1);
 }
+
+/* PAPER-TABS */
+paper-tabs {
+    background-color: #455A64;
+    background: -moz-linear-gradient(left, #455A64 0%, #4b616b 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #455A64), color-stop(100%, #4b616b));
+    background: -webkit-linear-gradient(left, #455A64 0%, #4b616b 100%);
+    background: -o-linear-gradient(left, #455A64 0%, #4b616b 100%);
+    background: -ms-linear-gradient(left, #455A64 0%, #4b616b 100%);
+    background: linear-gradient(to right, #455A64 0%, #4b616b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#455A64', endColorstr='#4b616b', GradientType=1);
+    color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    height: 70px;
+}
+
+paper-tabs paper-tab a {
+    color: white;
+    font-family: Arial;
+    font-size: 18px;
+    text-decoration: none;
+}

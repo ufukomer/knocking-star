@@ -19,24 +19,64 @@
     <!-- Styles -->
     <link rel="stylesheet" href="main.css">
     <style is="custom-style">
-        #center {
+        [center] {
             @apply(--layout-vertical);
             @apply(--layout-center-center);
+        }
+
+        :root {
+            --paper-tab-ink: #CFD8DC;
+            --paper-tabs-selection-bar-color: #FFFFFF;
+            /*--paper-tabs-selection-bar-height: 3px;*/
         }
     </style>
 </head>
 <body class="fullbleed layout vertical" unresolved>
-    <div class="header" id="center">
-        <img class="header-logo" src="images/knockingstar.png" alt="Logo">
-        <h1 class="header-title">Knocking Star</h1>
-        <h2 class="header-subtitle">A little about the reality of universe</h2>
-        <form class="search">
-            <input name="q" class="search-field" type="text" id="search-field" autocomplete="off">
-            <label class="search-label" for="search-field">
-                <span class="search-label-content">Search...</span>
-            </label>
-        </form>
-    </div>
-    <script src="main.js"></script>
+
+<div class="header" center>
+    <img class="header-logo" src="images/knockingstar.png" alt="Logo">
+
+    <h1 class="header-title">Knocking Star</h1>
+
+    <h2 class="header-subtitle">A little about the reality of universe</h2>
+
+    <form class="search">
+        <input name="q" class="search-field" type="text" id="search-field" autocomplete="off">
+        <label class="search-label" for="search-field">
+            <span class="search-label-content">Search...</span>
+        </label>
+    </form>
+</div>
+
+<template is="dom-bind" id="app">
+    <more-route-selector>
+        <paper-tabs>
+            <paper-tab route="projects">
+                <a href="{{urlFor('projects')}}" class="horizontal center-center layout">PROJECTS</a>
+            </paper-tab>
+            <paper-tab route="posts">
+                <a href="{{urlFor('posts')}}" class="horizontal center-center layout">POSTS</a>
+            </paper-tab>
+            <paper-tab route="about">
+                <a href="{{urlFor('about')}}" class="horizontal center-center layout">ABOUT</a>
+            </paper-tab>
+        </paper-tabs>
+    </more-route-selector>
+
+    <more-route-selector>
+        <iron-pages>
+            <section route="posts">
+                <h1>Posts</h1>
+            </section>
+            <section route="projects">
+                <h1>Projects</h1>
+            </section>
+            <section route="about">
+                <h1>About</h1>
+            </section>
+        </iron-pages>
+    </more-route-selector>
+</template>
+<script src="main.js"></script>
 </body>
 </html>

@@ -14,6 +14,9 @@
   ],
   "dependencies": {
     "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.3",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.3",
+    "more-routing": "Polymore/more-routing#~1.0.0",
+    "paper-tabs": "PolymerElements/paper-tabs#~1.0.2",
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
     "polymer": "Polymer/polymer#^1.1.3"
   }
