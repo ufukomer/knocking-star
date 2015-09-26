@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title></title>
+    <title>Knocking Star</title>
     <meta name="description" content="">
 
     <!-- Mobile -->
@@ -14,10 +14,18 @@
 
     <!-- Web Components -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
     <link rel="import" href="elements/elements.html">
 
     <!-- Styles -->
     <link rel="stylesheet" href="main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+
+    </script>
+
     <style is="custom-style">
         [center] {
             @apply(--layout-vertical);
@@ -25,10 +33,21 @@
         }
 
         :root {
-            --paper-tab-ink: #CFD8DC;
+            --paper-tab-ink: rgba(207, 216, 220, 0.8);
             --paper-tabs-selection-bar-color: #FFFFFF;
             /*--paper-tabs-selection-bar-height: 3px;*/
         }
+
+        .item {
+            @apply(--layout-horizontal);
+            @apply(--layout-center-center);
+        }
+
+        .pad {
+            @apply(--layout-flex);
+            @apply(--layout-vertical);
+        }
+
     </style>
 </head>
 <body class="fullbleed layout vertical" unresolved>
@@ -49,34 +68,120 @@
 </div>
 
 <template is="dom-bind" id="app">
-    <more-route-selector>
-        <paper-tabs>
-            <paper-tab route="projects">
-                <a href="{{urlFor('projects')}}" class="horizontal center-center layout">PROJECTS</a>
+
+    <div class="tabs">
+        <paper-tabs attr-for-selected="data-route" selected="{{route}}">
+            <paper-tab data-route="projects">
+                <a href="/projects" class="horizontal center-center layout">PROJECTS</a>
             </paper-tab>
-            <paper-tab route="posts">
-                <a href="{{urlFor('posts')}}" class="horizontal center-center layout">POSTS</a>
+            <paper-tab data-route="posts" onclick="showPosts()">
+                <a href="/posts" class="horizontal center-center layout">POSTS</a>
             </paper-tab>
-            <paper-tab route="about">
-                <a href="{{urlFor('about')}}" class="horizontal center-center layout">ABOUT</a>
+            <paper-tab data-route="about">
+                <a href="/about" class="horizontal center-center layout">ABOUT</a>
             </paper-tab>
         </paper-tabs>
-    </more-route-selector>
+    </div>
 
-    <more-route-selector>
-        <iron-pages>
-            <section route="posts">
-                <h1>Posts</h1>
+    <div class="container">
+        <iron-ajax id="binder"
+                   auto
+                   url="posts.json"
+                   handle-as="json"
+                   on-response="dataReceived"
+                   last-response="{{data}}"></iron-ajax>
+
+        <neon-animated-pages id="pages"
+                             attr-for-selected="data-route"
+                             selected="{{route}}">
+
+            <section is="ripple-cards-list" id="list" data-route="posts">
+                <div id="rippler"></div>
+
+                <div>
+                    <up-slider>
+                        <template is="dom-repeat" items="[[data]]">
+                            <div class="item">
+                                <img class="avatar" src="[[item.image]]">
+
+                                <div class="pad">
+                                    <div class="title">[[item.title]]</div>
+                                    <div class="subject">[[item.subject]]</div>
+                                    <div class="description">[[item.description]]</div>
+                                    <div class="date">[[item.date]]</div>
+
+                                    <bindable-link on-click="_onPolymerClick" bind-attr="[[item.id]]">
+
+                                        <paper-button class="read-button" ripple>
+                                            <iron-icon icon="icons:arrow-forward"></iron-icon>
+                                            Read
+                                        </paper-button>
+                                    </bindable-link>
+                                </div>
+                            </div>
+                        </template>
+                    </up-slider>
+                </div>
             </section>
-            <section route="projects">
+            <section is="ripple-card" data-route="post-detail">
+                <div class="fit layout vertical center-center">
+                    <p id="paragraph"></p>
+                    <bindable-link on-click="_onBackClick" bind-attr="">
+                        <paper-button raised>Read</paper-button>
+                    </bindable-link>
+                </div>
+            </section>
+            <section data-route="projects">
                 <h1>Projects</h1>
             </section>
-            <section route="about">
+            <section data-route="about">
                 <h1>About</h1>
             </section>
-        </iron-pages>
-    </more-route-selector>
+        </neon-animated-pages>
+    </div>
 </template>
-<script src="main.js"></script>
+
+<script>
+
+    document.addEventListener('WebComponentsReady', function () {
+
+        var rippler = document.getElementById('rippler');
+        var scope = document.querySelector('#app');
+
+        scope.dataReceived = function () {
+            console.log('Response data was received.');
+        };
+
+        scope._onPolymerClick = function (event) {
+            this.$.list.sharedElements = {
+                'ripple': rippler,
+                'reverse-ripple': rippler
+            };
+            $("paper-tab").fadeOut();
+            this.$.pages.selected = 'post-detail';
+        };
+
+        scope._onBackClick = function (event) {
+            $("paper-tab").fadeIn();
+            this.$.list.sharedElements = {
+                'ripple': rippler,
+                'reverse-ripple': rippler
+            };
+            this.$.pages.selected = 'posts';
+        }
+    });
+
+    function showPosts() {
+        var post = document.querySelector('up-slider');
+        post.show();
+    }
+    function hidePosts() {
+        var post = document.querySelector('up-slider');
+        post.hide();
+    }
+
+
+</script>
+<script src="script/main.js"></script>
 </body>
 </html>

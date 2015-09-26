@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-in-animation.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="smooth-slide-up-animation.html">
+
+<dom-module id="up-slider">
+    <template>
+        <content></content>
+    </template>
+    <script>
+        Polymer({
+            is: 'up-slider',
+            behaviors: [Polymer.NeonAnimationRunnerBehavior],
+            properties: {
+                opened: {
+                    type: Boolean
+                },
+                animationConfig: {
+                    value: function () {
+                        return {
+                            'entry': [
+                                {
+                                    name: 'smooth-slide-up-animation',
+                                    node: this,
+                                    timing: {delay: 400, duration: 1000}
+                                },
+                                {
+                                    name: 'fade-in-animation',
+                                    node: this,
+                                    timing: {delay: 800, duration: 1000}
+                                }],
+                            'exit': {
+                                name: 'fade-out-animation',
+                                node: this
+                            }
+                        }
+                    }
+                }
+            },
+            listeners: {
+                'neon-animation-finish': '_onNeonAnimationFinish'
+            },
+            show: function () {
+                this.opened = true;
+                this.style.display = 'block';
+                this.cancelAnimation();
+                this.playAnimation('entry');
+            },
+            hide: function () {
+                this.opened = false;
+                this.cancelAnimation();
+                this.playAnimation('exit');
+            },
+            _onNeonAnimationFinish: function () {
+                if (!this.opened) {
+                    this.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</dom-module>

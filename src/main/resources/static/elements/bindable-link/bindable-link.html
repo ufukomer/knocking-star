@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="bindable-link">
+    <style>
+        :host {
+            display: inline-table;
+        }
+    </style>
+    <template>
+        <a href$="{{_getHref(bindAttr)}}">
+            <content></content>
+        </a>
+    </template>
+    <script>
+        Polymer({
+            is: 'bindable-link',
+            properties: {
+                bindAttr: {
+                    type: String,
+                    reflectToAttribute: true
+                }
+            },
+            _getHref: function (bindAttr) {
+                return '/posts/' + bindAttr;
+            }
+        });
+    </script>
+</dom-module>
+

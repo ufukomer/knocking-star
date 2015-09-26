@@ -1,0 +1,56 @@
+<script src="../bower_components/page/page.js"></script>
+<script>
+    window.addEventListener('WebComponentsReady', function() {
+
+        page('/', function() {
+            console.log("url -> /");
+            app.route = 'posts';
+            // TODO: Write under a function then make related with page count
+            $('neon-animated-pages').css('height', '800px');
+
+            document.querySelector('up-slider').show();
+        });
+
+        page('/posts', function() {
+            console.log("url -> /posts");
+            app.route = 'posts';
+            // TODO: Write under a function then make related with page count
+            $('neon-animated-pages').css('height', '800px');
+
+            document.querySelector('up-slider').show();
+        });
+
+        page('/posts/:id', function(data) {
+            var id = data.params.id;
+            app.route = 'post-detail';
+            app.params = data.params;
+
+            $.getJSON('/greeting?name=' + id, function(user){
+                data.user = user;
+                app.params = data.params;
+                document.getElementById('paragraph').innerHTML = data.user.content;
+                /*setTimeout(function() {
+                    document.getElementById('paragraph').innerHTML = data.user.content;
+                }, 300);*/
+            });
+            // TODO: Write under a function then make related with page count
+            $('neon-animated-pages').css('height', '800px');
+            $("paper-tab").fadeOut();
+        });
+
+        page('/projects', function() {
+            console.log("url -> /projects")
+            app.route = 'projects';
+        });
+
+        page('/about', function() {
+            console.log("url -> /about")
+            app.route = 'about';
+        });
+
+        page({
+            hashbang: true
+        });
+
+    });
+</script>

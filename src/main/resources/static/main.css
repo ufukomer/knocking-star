@@ -4,9 +4,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
     background-color: #ececec;
+    opacity:.9999
 }
 
-/* HEADER */
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 .header {
     width: 100%;
     min-height: 400px;
@@ -19,6 +22,10 @@ body {
     background: linear-gradient(to right, #607D8B 0%, #6e8d9c 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#607D8B', endColorstr='#6e8d9c', GradientType=1);
     line-height: 0;
+}
+
+.header img {
+
 }
 
 .header .header-logo {
@@ -40,16 +47,9 @@ body {
     font-weight: 300;
 }
 
-@media only screen and (max-width: 400px) {
-    .header .header-title {
-        font-size: 37px;
-    }
-    .header .header-subtitle {
-        font-size: 18px;
-    }
-}
-
-/* SEARCH */
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
 .search {
     background: #cfd8dc;
     font-size: 24px;
@@ -131,7 +131,9 @@ body {
     transform: scale3d(38, 38, 1);
 }
 
-/* PAPER-TABS */
+/* ==========================================================================
+   PAPER-TABS
+   ========================================================================== */
 paper-tabs {
     background-color: #455A64;
     background: -moz-linear-gradient(left, #455A64 0%, #4b616b 100%);
@@ -148,7 +150,132 @@ paper-tabs {
 
 paper-tabs paper-tab a {
     color: white;
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 18px;
     text-decoration: none;
+}
+
+/* ==========================================================================
+   POST-LIST
+   ========================================================================== */
+.item {
+    width: 60%;
+    /* or delete this line */
+    min-height: 200px;
+    margin: 80px auto;
+    padding: 40px 0 20px 20px;
+    /*border-radius: 4px;*/
+    background-color: #fafafa;
+    /*border: 1px solid #ddd;*/
+    transition: box-shadow 0.1s;
+    box-shadow: 0 2px 5px #888888;
+}
+
+.item:hover {
+    box-shadow: 0 5px 15px #888888;
+}
+
+.avatar {
+    display: block;
+    margin-right: 20px;
+    margin-left: 40px;
+    height: 15%;
+    width: 15%;
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 100px;
+    box-sizing: border-box;
+    background-color: #DDD;
+    border: 3px solid #475c66;
+}
+
+.pad {
+    padding: 0 16px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subject {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #8d8787;
+}
+
+.description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.date {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #727272;
+    margin-bottom: 20px;
+}
+
+.read-button::shadow paper-ripple {
+    color: gray;
+}
+
+.read-button:hover {
+    background: #eee;
+}
+
+.read-button {
+    font-weight: 400;
+    color: #333333;
+    min-width: 110px;
+    text-align: left;
+}
+
+.read-button iron-icon {
+    color: #333333;
+    margin-right: 5px;
+}
+
+neon-animated-pages {
+    width: 100%;
+    height: 100%;
+}
+
+#rippler {
+    display: inline-table;
+}
+
+@media only screen and (max-width: 400px) {
+    .header .header-title {
+        font-size: 37px;
+    }
+    .header .header-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .avatar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .item {
+        width: 70%;;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .item {
+        width: 80%;;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .item {
+        width: 90%;;
+    }
 }
