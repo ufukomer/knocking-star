@@ -35,7 +35,6 @@
         :root {
             --paper-tab-ink: rgba(207, 216, 220, 0.8);
             --paper-tabs-selection-bar-color: #FFFFFF;
-            /*--paper-tabs-selection-bar-height: 3px;*/
         }
 
         .item {
@@ -48,6 +47,19 @@
             @apply(--layout-vertical);
         }
 
+        .horizontal-section {
+            background-color: white;
+            margin: 44px 33px;
+            min-width: 200px;
+            @apply(--shadow-elevation-2dp);
+        }
+
+        .horizontal-section-container {
+            margin: 40px;
+            @apply(--layout-horizontal);
+            @apply(--layout-center-justified);
+            @apply(--layout-wrap);
+        }
     </style>
 </head>
 <body class="fullbleed layout vertical" unresolved>
@@ -74,7 +86,7 @@
             <paper-tab data-route="projects">
                 <a href="/projects" class="horizontal center-center layout">PROJECTS</a>
             </paper-tab>
-            <paper-tab data-route="posts" onclick="showPosts()">
+            <paper-tab data-route="posts">
                 <a href="/posts" class="horizontal center-center layout">POSTS</a>
             </paper-tab>
             <paper-tab data-route="about">
@@ -132,7 +144,27 @@
                 </div>
             </section>
             <section data-route="projects">
-                <h1>Projects</h1>
+                <div>
+                    <right-slider>
+                        <div class="horizontal-section-container">
+                            <div>
+                                <div class="horizontal-section">
+                                    <project-card repo-url="https://api.github.com/repos/ufukomer/knocking-star"></project-card>
+                                </div>
+                            </div>
+                            <!--<div>
+                                <div class="horizontal-section">
+                                    <project-card repo-url=""></project-card>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="horizontal-section">
+                                    <project-card repo-url=""></project-card>
+                                </div>
+                            </div>-->
+                        </div>
+                    </right-slider>
+                </div>
             </section>
             <section data-route="about">
                 <h1>About</h1>
@@ -152,7 +184,7 @@
             console.log('Response data was received.');
         };
 
-        scope._onPolymerClick = function (event) {
+        scope._onPolymerClick = function () {
             this.$.list.sharedElements = {
                 'ripple': rippler,
                 'reverse-ripple': rippler
@@ -161,7 +193,7 @@
             this.$.pages.selected = 'post-detail';
         };
 
-        scope._onBackClick = function (event) {
+        scope._onBackClick = function () {
             $("paper-tab").fadeIn();
             this.$.list.sharedElements = {
                 'ripple': rippler,
@@ -171,7 +203,7 @@
         }
     });
 
-    function showPosts() {
+    /*function showPosts() {
         var post = document.querySelector('up-slider');
         post.show();
     }
@@ -179,8 +211,14 @@
         var post = document.querySelector('up-slider');
         post.hide();
     }
-
-
+    function showProjects() {
+        var post = document.querySelector('right-slider');
+        post.show();
+    }
+    function hideProjects() {
+        var post = document.querySelector('right-slider');
+        post.hide();
+    }*/
 </script>
 <script src="script/main.js"></script>
 </body>

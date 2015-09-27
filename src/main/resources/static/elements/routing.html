@@ -3,21 +3,23 @@
     window.addEventListener('WebComponentsReady', function() {
 
         page('/', function() {
-            console.log("url -> /");
             app.route = 'posts';
+
             // TODO: Write under a function then make related with page count
-            $('neon-animated-pages').css('height', '800px');
+            // $('neon-animated-pages').css('height', '800px');
 
             document.querySelector('up-slider').show();
+            document.querySelector('right-slider').hide();
         });
 
         page('/posts', function() {
-            console.log("url -> /posts");
             app.route = 'posts';
+
             // TODO: Write under a function then make related with page count
-            $('neon-animated-pages').css('height', '800px');
+            // $('neon-animated-pages').css('height', '800px');
 
             document.querySelector('up-slider').show();
+            document.querySelector('right-slider').hide();
         });
 
         page('/posts/:id', function(data) {
@@ -28,24 +30,32 @@
             $.getJSON('/greeting?name=' + id, function(user){
                 data.user = user;
                 app.params = data.params;
+
                 document.getElementById('paragraph').innerHTML = data.user.content;
+
                 /*setTimeout(function() {
                     document.getElementById('paragraph').innerHTML = data.user.content;
                 }, 300);*/
             });
+
             // TODO: Write under a function then make related with page count
-            $('neon-animated-pages').css('height', '800px');
+            // $('neon-animated-pages').css('height', '800px');
+
             $("paper-tab").fadeOut();
         });
 
         page('/projects', function() {
-            console.log("url -> /projects")
             app.route = 'projects';
+
+            document.querySelector('right-slider').show();
+            document.querySelector('up-slider').hide();
         });
 
         page('/about', function() {
-            console.log("url -> /about")
             app.route = 'about';
+
+            document.querySelector('right-slider').hide();
+            document.querySelector('up-slider').hide();
         });
 
         page({

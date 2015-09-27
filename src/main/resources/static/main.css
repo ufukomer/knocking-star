@@ -10,7 +10,7 @@ body {
 /* ==========================================================================
    HEADER
    ========================================================================== */
-.header {
+.header[center] {
     width: 100%;
     min-height: 400px;
     background: #607D8B;
@@ -24,16 +24,16 @@ body {
     line-height: 0;
 }
 
-.header img {
+.header[center] img {
 
 }
 
-.header .header-logo {
+.header[center] .header-logo {
     height: 100px;
     weight:100px
 }
 
-.header .header-title {
+.header[center] .header-title {
     color: #fff;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 47px;
@@ -41,7 +41,7 @@ body {
     -webkit-margin-after: 0.5em;
 }
 
-.header .header-subtitle {
+.header[center] .header-subtitle {
     color: #aebec6;
     font-family: 'Roboto', 'Noto', sans-serif;
     font-weight: 300;
@@ -247,35 +247,35 @@ neon-animated-pages {
     display: inline-table;
 }
 
-@media only screen and (max-width: 400px) {
-    .header .header-title {
-        font-size: 37px;
-    }
-    .header .header-subtitle {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     .avatar {
         display: none;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .item {
         width: 70%;;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
     .item {
         width: 80%;;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .item {
         width: 90%;;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .header[center] .header-title {
+        font-size: 37px;
+    }
+    .header[center] .header-subtitle {
+        font-size: 18px;
     }
 }

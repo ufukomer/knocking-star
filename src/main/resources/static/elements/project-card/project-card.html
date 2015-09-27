@@ -1,0 +1,88 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../custom-icons.html">
+
+<dom-module id="project-card">
+    <style>
+
+        .card-content {
+            width: 350px;
+            height: 100px;
+        }
+
+        iron-icon {
+            fill: #0c0c0c;
+        }
+
+        .link-button::shadow paper-ripple {
+            color: gray;
+        }
+
+        .link-button:hover {
+            background: #eee;
+        }
+
+        .link-button {
+            font-weight: 400;
+            color: #333333;
+        }
+
+        @media only screen and (max-width: 400px) {
+            .card-content {
+                width: 200px;
+                height: 50px;
+            }
+        }
+    </style>
+    <template>
+
+        <iron-ajax id="binder"
+                   auto
+                   url='{{repoUrl}}'
+                   handle-as="json"
+                   on-response="dataReceived"
+                   last-response="{{data}}"></iron-ajax>
+
+        <paper-card heading="[[data.name]]">
+            <div class="card-content">
+                <span>[[data.description]]</span>
+
+            </div>
+            <div class="card-actions">
+                <a href="{{data.html_url}}" target="_blank">
+                    <paper-button class="link-button">
+                            <iron-icon icon="custom-icons:github"></iron-icon>
+                            Github
+                    </paper-button></a>
+                <a href="{{data.homepage}}" target="_blank">
+                <paper-button class="link-button">
+                    <iron-icon icon="icons:visibility"></iron-icon>
+                    Demo
+                </paper-button></a>
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'project-card',
+            properties: {
+                repoUrl: {
+                    type: String
+                },
+                githubLink: {
+
+                }
+            },
+            _githubLink : function(url) {
+                window.open(url,'_blank');
+            }
+        });
+    </script>
+</dom-module>
