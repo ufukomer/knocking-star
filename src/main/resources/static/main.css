@@ -1,3 +1,7 @@
+html, body, #container { height: 100%; }
+
+body > #container { height: auto; min-height: 100%; }
+
 body {
     font-family: "RobotoDraft", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -153,7 +157,7 @@ paper-tabs {
     background: linear-gradient(to right, #455A64 0%, #4b616b 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#455A64', endColorstr='#4b616b', GradientType=1);
     color: #fff;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     height: 70px;
 }
 
@@ -180,7 +184,7 @@ paper-tabs paper-tab a {
 }
 
 .posts .item:hover {
-    box-shadow: 0 5px 15px #888888;
+    /*box-shadow: 0 5px 15px #888888;*/
 }
 
 .posts .avatar {
@@ -248,8 +252,8 @@ paper-tabs paper-tab a {
 
 neon-animated-pages {
     /*overflow-x: hidden;*/
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 #rippler {
@@ -370,4 +374,41 @@ neon-animated-pages {
     .about .item {
         width: 90%;;
     }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 320px;
+    background: #e4e0e0;
+    border-top: 1px solid #c8c8c8;
+}
+
+#footer-container {
+    padding-top: 100px;
+}
+
+#footer-container paper-button::shadow paper-ripple {
+    color: gray;
+}
+
+#footer-container paper-button {
+    font-weight: 300;
+    color: #757575;
+}
+
+#footer-container paper-button iron-icon {
+    color: #565656;
+}
+
+.footer #licence {
+    padding-top: 100px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #757575;
 }

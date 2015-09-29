@@ -123,7 +123,6 @@
                                     <div class="date">[[item.date]]</div>
 
                                     <bindable-link on-click="_onPolymerClick" bind-attr="[[item.id]]">
-
                                         <paper-button class="read-button" ripple>
                                             <iron-icon icon="icons:arrow-forward"></iron-icon>
                                             Read
@@ -168,53 +167,78 @@
             </section>
             <section data-route="about">
                 <div class="about" center>
-                        <left-slider>
-                            <div class="profile" center>
-                                <img class="avatar" src="images/profile_photo.png">
+                    <left-slider>
+                        <div class="profile" center>
+                            <img class="avatar" src="images/profile_photo.png">
 
-                                <div class="name">Ömer Ufuk Efendioğlu</div>
+                            <div class="name">Ömer Ufuk Efendioğlu</div>
 
-                                <div class="location">
-                                    <iron-icon icon="custom-icons:location"></iron-icon>
-                                    Istanbul, Turkey
-                                </div>
+                            <div class="location">
+                                <iron-icon icon="custom-icons:location"></iron-icon>
+                                Istanbul, Turkey
+                            </div>
 
-                                <div class="social">
-                                    <a href="https://www.linkedin.com/profile/view?id=AAMAABSWudgBzy5x_Yd0YgsefaYvQR2aw3a4pUc&trk=hp-identity-name" target="_blank">
-                                        <iron-icon id="linkedin" icon="custom-icons:linkedin"></iron-icon></a>
-                                    <a href="mailto:ufukomer@gmail.com" target="_blank">
-                                        <iron-icon id="mail-to" icon="icons:mail"></iron-icon></a>
-                                    <a href="https://github.com/ufukomer" target="_blank">
-                                        <iron-icon id="github" icon="custom-icons:github"></iron-icon></a>
+                            <div class="social">
+                                <a href="https://www.linkedin.com/profile/view?id=AAMAABSWudgBzy5x_Yd0YgsefaYvQR2aw3a4pUc&trk=hp-identity-name" target="_blank">
+                                    <iron-icon id="linkedin" icon="custom-icons:linkedin"></iron-icon></a>
+                                <a href="mailto:ufukomer@gmail.com" target="_blank">
+                                    <iron-icon id="mail-to" icon="icons:mail"></iron-icon></a>
+                                <a href="https://github.com/ufukomer" target="_blank">
+                                    <iron-icon id="github" icon="custom-icons:github"></iron-icon></a>
 
-                                    <paper-tooltip for="linkedin" offset="10">LinkedIn</paper-tooltip>
-                                    <paper-tooltip for="mail-to" offset="10">ufukomer@gmail.com</paper-tooltip>
-                                    <paper-tooltip for="github" offset="10">Github</paper-tooltip>
+                                <paper-tooltip for="linkedin" offset="10">LinkedIn</paper-tooltip>
+                                <paper-tooltip for="mail-to" offset="10">ufukomer@gmail.com</paper-tooltip>
+                                <paper-tooltip for="github" offset="10">Github</paper-tooltip>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad">
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Proin nulla felis, dapibus quis nulla vel, elementum vehicula dolor.
+                                    Ut varius quis quam quis aliquam. Fusce dapibus elementum feugiat.
+                                    Praesent at tellus eleifend, ornare risus id, fringilla risus.
+                                    Aenean maximus, odio non iaculis elementum, arcu augue scelerisque turpis,
+                                    vel pulvinar enim dolor eu enim. Fusce id nisi magna. Etiam purus tortor,
+                                    vestibulum sit amet mollis eget, ultricies eu urna. Nam at ornare quam.
+                                    Nunc aliquet erat augue, a pharetra massa gravida eleifend. Vivamus rhoncus
+                                    libero risus, sed mollis lectus pellentesque at. Nulla luctus molestie mauris,
+                                    sed auctor arcu feugiat et. Nullam facilisis aliquam orci, a accumsan neque varius
+                                    sed. Etiam ornare lectus felis, ullamcorper dapibus felis fringilla ut.
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="pad">
-                                    <div class="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Proin nulla felis, dapibus quis nulla vel, elementum vehicula dolor.
-                                        Ut varius quis quam quis aliquam. Fusce dapibus elementum feugiat.
-                                        Praesent at tellus eleifend, ornare risus id, fringilla risus.
-                                        Aenean maximus, odio non iaculis elementum, arcu augue scelerisque turpis,
-                                        vel pulvinar enim dolor eu enim. Fusce id nisi magna. Etiam purus tortor,
-                                        vestibulum sit amet mollis eget, ultricies eu urna. Nam at ornare quam.
-                                        Nunc aliquet erat augue, a pharetra massa gravida eleifend. Vivamus rhoncus
-                                        libero risus, sed mollis lectus pellentesque at. Nulla luctus molestie mauris,
-                                        sed auctor arcu feugiat et. Nullam facilisis aliquam orci, a accumsan neque varius
-                                        sed. Etiam ornare lectus felis, ullamcorper dapibus felis fringilla ut.
-                                    </div>
-                                </div>
-                            </div>
-                        </left-slider>
+                        </div>
+                    </left-slider>
                 </div>
             </section>
         </neon-animated-pages>
     </div>
 </template>
+
+<div class="footer" >
+    <div id="footer-container" class="horizontal around-justified layout">
+
+        <a href="https://github.com/ufukomer/knocking-star" target="_blank">
+            <paper-button class="link-button" raised>
+                <iron-icon icon="custom-icons:archive"></iron-icon>
+                GET CODE
+            </paper-button></a>
+
+        <a href="#" target="_blank">
+            <paper-button class="link-button">
+                +KNOCKINGSTAR
+            </paper-button></a>
+
+        <a href="#" target="_blank">
+            <paper-button class="link-button">
+                /KNOCKINGSTAR
+            </paper-button></a>
+
+    </div>
+    <div id="licence" center>
+        © 2015 Knocking Star. Content licenced under MIT Licence.
+    </div>
+</div>
 
 <script>
 
