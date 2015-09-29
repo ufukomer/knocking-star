@@ -47,6 +47,15 @@ body {
     font-weight: 300;
 }
 
+@media only screen and (max-width: 400px) {
+    .header[center] .header-title {
+        font-size: 37px;
+    }
+    .header[center] .header-subtitle {
+        font-size: 18px;
+    }
+}
+
 /* ==========================================================================
    SEARCH
    ========================================================================== */
@@ -158,9 +167,8 @@ paper-tabs paper-tab a {
 /* ==========================================================================
    POST-LIST
    ========================================================================== */
-.item {
+.posts .item {
     width: 60%;
-    /* or delete this line */
     min-height: 200px;
     margin: 80px auto;
     padding: 40px 0 20px 20px;
@@ -171,11 +179,11 @@ paper-tabs paper-tab a {
     box-shadow: 0 2px 5px #888888;
 }
 
-.item:hover {
+.posts .item:hover {
     box-shadow: 0 5px 15px #888888;
 }
 
-.avatar {
+.posts .avatar {
     display: block;
     margin-right: 20px;
     margin-left: 40px;
@@ -189,29 +197,29 @@ paper-tabs paper-tab a {
     border: 3px solid #475c66;
 }
 
-.pad {
+.posts .pad {
     padding: 0 16px;
 }
 
-.title {
+.posts .title {
     font-size: 24px;
     font-weight: bold;
 }
 
-.subject {
+.posts .subject {
     font-size: 14px;
     font-weight: lighter;
     color: #8d8787;
 }
 
-.description {
+.posts .description {
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 300;
 }
 
-.date {
+.posts .date {
     font-size: 14px;
     font-weight: lighter;
     color: #727272;
@@ -239,6 +247,7 @@ paper-tabs paper-tab a {
 }
 
 neon-animated-pages {
+    /*overflow-x: hidden;*/
     width: 100%;
     height: 100%;
 }
@@ -248,34 +257,117 @@ neon-animated-pages {
 }
 
 @media only screen and (max-width: 1000px) {
-    .avatar {
+    .posts .avatar {
         display: none;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    .item {
+    .posts .item {
         width: 70%;;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    .item {
+    .posts .item {
         width: 80%;;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .item {
+    .posts .item {
         width: 90%;;
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .header[center] .header-title {
-        font-size: 37px;
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+.about {
+    overflow-x: hidden;
+    margin-top: 75px;
+}
+
+.about .item {
+    width: 40%;
+    min-height: 200px;
+    margin: 80px auto;
+    padding: 30px 120px 30px 120px;
+    background-color: #fafafa;
+    transition: box-shadow 0.1s;
+    box-shadow: 0 2px 5px #888888;
+}
+
+.about .avatar {
+    display: block;
+    border-radius: 200px;
+    box-sizing: border-box;
+    background-color: #DDD;
+    border: 5px solid #cfd8dc;
+    /*box-shadow: 0 2px 5px #888888;*/
+}
+
+.about img {
+    margin: 20px;
+    height: 200px;
+    width: 200px
+}
+
+.about .name {
+    margin: 5px;
+    color: #63808f;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.about .location {
+    margin: 5px;
+    color: #63808f;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.about .social {
+    margin: 15px;
+}
+.about .social iron-icon {
+    margin-right: 15px;
+}
+
+.about .social iron-icon:hover {
+    fill: #CFD8DC;
+}
+
+.about iron-icon {
+    fill: #607D8B;
+}
+
+.about .pad {
+    padding: 0 16px;
+}
+
+.about .description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 800px) {
+    .about .item {
+        width: 70%;;
+        padding: 40px 0 20px 20px;
     }
-    .header[center] .header-subtitle {
-        font-size: 18px;
+}
+
+@media only screen and (max-width: 700px) {
+    .about .item {
+        width: 80%;;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about .item {
+        width: 90%;;
     }
 }

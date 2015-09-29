@@ -3,7 +3,7 @@
 <link rel="import" href="../../bower_components/neon-animation/web-animations.html">
 
 <!--
-`<slide-up-animation>` animates the transform of an element from `translateX(-100%)` to
+`<slide-up-animation>` animates the transform of an element from `translateX(100%)` to
 `translateX(0%)`. The `transformOrigin` defaults to `50% 0`.
 
 Configuration:
@@ -21,7 +21,7 @@ Configuration:
 
     Polymer({
 
-        is: 'smooth-slide-right-animation',
+        is: 'smooth-slide-left-animation',
 
         behaviors: [
             Polymer.NeonAnimationBehavior
@@ -39,8 +39,8 @@ Configuration:
             this._effect = new KeyframeEffect(node, [
                 {'transform': 'translate(0)'},
                 {offset: 0.0, 'transform': 'translate(0)'},
-                {offset: 0.0, 'transform': 'translateX(-100%)'},
-                {offset: 0.5, 'transform': 'translateX(-50%)'},
+                {offset: 0.0, 'transform': 'translateX(100%)'},
+                {offset: 0.5, 'transform': 'translateX(50%)'},
                 {offset: 1.0, 'transform': 'translateX(0%)'}
             ], this.timingFromConfig(config));
 

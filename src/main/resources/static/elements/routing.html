@@ -1,8 +1,8 @@
 <script src="../bower_components/page/page.js"></script>
 <script>
-    window.addEventListener('WebComponentsReady', function() {
+    window.addEventListener('WebComponentsReady', function () {
 
-        page('/', function() {
+        page('/', function () {
             app.route = 'posts';
 
             // TODO: Write under a function then make related with page count
@@ -10,9 +10,10 @@
 
             document.querySelector('up-slider').show();
             document.querySelector('right-slider').hide();
+            document.querySelector('left-slider').hide();
         });
 
-        page('/posts', function() {
+        page('/posts', function () {
             app.route = 'posts';
 
             // TODO: Write under a function then make related with page count
@@ -20,22 +21,19 @@
 
             document.querySelector('up-slider').show();
             document.querySelector('right-slider').hide();
+            document.querySelector('left-slider').hide();
         });
 
-        page('/posts/:id', function(data) {
+        page('/posts/:id', function (data) {
             var id = data.params.id;
             app.route = 'post-detail';
             app.params = data.params;
 
-            $.getJSON('/greeting?name=' + id, function(user){
+            $.getJSON('/greeting?name=' + id, function (user) {
                 data.user = user;
                 app.params = data.params;
 
                 document.getElementById('paragraph').innerHTML = data.user.content;
-
-                /*setTimeout(function() {
-                    document.getElementById('paragraph').innerHTML = data.user.content;
-                }, 300);*/
             });
 
             // TODO: Write under a function then make related with page count
@@ -44,16 +42,18 @@
             $("paper-tab").fadeOut();
         });
 
-        page('/projects', function() {
+        page('/projects', function () {
             app.route = 'projects';
 
             document.querySelector('right-slider').show();
             document.querySelector('up-slider').hide();
+            document.querySelector('left-slider').hide();
         });
 
-        page('/about', function() {
+        page('/about', function () {
             app.route = 'about';
 
+            document.querySelector('left-slider').show();
             document.querySelector('right-slider').hide();
             document.querySelector('up-slider').hide();
         });
