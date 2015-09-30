@@ -15,16 +15,13 @@
     <!-- Web Components -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
     <link rel="import" href="elements/elements.html">
 
     <!-- Styles -->
     <link rel="stylesheet" href="main.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <script>
-
-    </script>
 
     <style is="custom-style">
         [center] {
@@ -96,8 +93,7 @@
     </div>
 
     <div class="container">
-        <iron-ajax id="binder"
-                   auto
+        <iron-ajax auto
                    url="posts.json"
                    handle-as="json"
                    on-response="dataReceived"
