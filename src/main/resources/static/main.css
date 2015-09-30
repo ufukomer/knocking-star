@@ -292,23 +292,12 @@ neon-animated-pages {
     margin-top: 75px;
 }
 
-.about .item {
-    width: 40%;
-    min-height: 200px;
-    margin: 80px auto;
-    padding: 30px 120px 30px 120px;
-    background-color: #fafafa;
-    transition: box-shadow 0.1s;
-    box-shadow: 0 2px 5px #888888;
-}
-
 .about .avatar {
     display: block;
     border-radius: 200px;
     box-sizing: border-box;
     background-color: #DDD;
     border: 5px solid #cfd8dc;
-    /*box-shadow: 0 2px 5px #888888;*/
 }
 
 .about img {
@@ -344,6 +333,15 @@ neon-animated-pages {
 
 .about iron-icon {
     fill: #607D8B;
+}
+
+.about .item {
+    width: 40%;
+    min-height: 200px;
+    margin: 80px auto;
+    padding: 30px 120px 30px 120px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px #888888;
 }
 
 .about .pad {
