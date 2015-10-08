@@ -1,6 +1,11 @@
-html, body, #container { height: 100%; }
+html, body, #container {
+    height: 100%;
+}
 
-body > #container { height: auto; min-height: 100%; }
+body > #container {
+    height: auto;
+    min-height: 100%;
+}
 
 body {
     font-family: "RobotoDraft", Helvetica, Arial, sans-serif;
@@ -8,7 +13,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
     background-color: #ececec;
-    opacity:.9999
+    min-width: 440px;
 }
 
 /* ==========================================================================
@@ -34,7 +39,7 @@ body {
 
 .header[center] .header-logo {
     height: 100px;
-    weight:100px
+    weight: 100px
 }
 
 .header[center] .header-title {
@@ -55,6 +60,7 @@ body {
     .header[center] .header-title {
         font-size: 37px;
     }
+
     .header[center] .header-subtitle {
         font-size: 18px;
     }
@@ -254,6 +260,7 @@ neon-animated-pages {
     /*overflow-x: hidden;*/
     min-width: 100%;
     min-height: 100%;
+    padding-bottom: 300px;
 }
 
 #rippler {
@@ -323,6 +330,7 @@ neon-animated-pages {
 .about .social {
     margin: 15px;
 }
+
 .about .social iron-icon {
     margin-right: 15px;
 }

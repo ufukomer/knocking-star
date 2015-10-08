@@ -1,6 +1,8 @@
 *.idea
 *.iml
 /src/main/resources/static/images/profile_photo.png
+/node_modules
+bower_components
 
 ### Java template
 *.class
