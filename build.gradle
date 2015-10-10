@@ -93,7 +93,7 @@ task bowerPackages() {
     dependsOn bowerSyncJavascript
 }
 
-bootRun {
+build {
     dependsOn bowerPackages
 }
 
