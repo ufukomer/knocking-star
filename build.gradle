@@ -24,6 +24,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'com.moowork.node'
 
+// node configuration
 node {
     version = '0.12.7'
     npmVersion = '2.11.3'
@@ -58,6 +59,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.5'
 }
 
+// Caching of dependencies
 task npmCacheConfig(type: NpmTask) {
     description = "Configure the NPM cache"
     def npmCacheDir = "${gradle.getGradleUserHomeDir()}/caches/npm"
@@ -65,6 +67,7 @@ task npmCacheConfig(type: NpmTask) {
     args = ['config', 'set', 'cache', npmCacheDir]
 }
 
+// Install npm dependencies by using package.json
 task npmPackages(type: NpmTask, dependsOn: npmCacheConfig) {
     description = "Install Node.js packages"
     args = ['install']
@@ -72,6 +75,7 @@ task npmPackages(type: NpmTask, dependsOn: npmCacheConfig) {
     outputs.files file('node_modules')
 }
 
+// Install bower dependencies by using bower.json
 task bowerInstall(type: NodeTask) {
     script = file('node_modules/bower/bin/bower')
     args = ["--config.storage.cache=${gradle.getGradleUserHomeDir()}/caches/bower/cache",
@@ -83,6 +87,7 @@ task bowerInstall(type: NodeTask) {
     dependsOn npmPackages
 }
 
+// Move bower_component folder into our web dir
 task bowerSyncJavascript(type: Sync) {
     from 'bower_components'
     into "src/main/resources/static/bower_components"
@@ -93,10 +98,12 @@ task bowerPackages() {
     dependsOn bowerSyncJavascript
 }
 
+// build task is enough to run all node and bower configurations and dependency installations
 build {
     dependsOn bowerPackages
 }
 
+// Clean method of node_modules, bower_components for clean task
 clean.delete << file('src/main/resources/static/bower_components')
 clean.delete << file('node_modules')
 clean.delete << file('bower_components')
