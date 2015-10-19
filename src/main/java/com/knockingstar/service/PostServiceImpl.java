@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author Ömer Ufuk Efendio?lu
  */
@@ -22,5 +24,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public Post getPost(long id) {
         return postRepository.findById(id);
+    }
+
+    @Override
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
     }
 }

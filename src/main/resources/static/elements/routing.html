@@ -33,7 +33,7 @@
             app.route = 'post-detail';
             app.params = data.params;
 
-            $.getJSON('/post?name=' + id, function (user) {
+            $.getJSON('/post?id=' + id, function (user) {
                 data.user = user;
                 app.params = data.params;
 

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author Ömer Ufuk Efendio?lu
  */
@@ -23,5 +25,12 @@ public class PostController {
     Post post(@RequestParam(value = "id", required = true)
               String id) {
         return postService.getPost(Integer.parseInt(id));
+    }
+
+    @RequestMapping("/allposts")
+    public
+    @ResponseBody
+    List<Post> posts() {
+        return postService.getAllPosts();
     }
 }

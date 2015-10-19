@@ -1,6 +1,5 @@
 package com.knockingstar.model;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -8,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.UUID;
 
 /**
  * @author Ömer Ufuk Efendio?lu
@@ -38,10 +36,6 @@ public class Post {
 
     @NotNull
     private String image;
-
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid")
-    private UUID guid;
 
     @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -103,14 +97,6 @@ public class Post {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public UUID getGuid() {
-        return guid;
-    }
-
-    public void setGuid(UUID guid) {
-        this.guid = guid;
     }
 
     public LocalDate getDate() {
