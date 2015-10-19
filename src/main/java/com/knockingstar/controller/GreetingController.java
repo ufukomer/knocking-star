@@ -1,6 +1,6 @@
 package com.knockingstar.controller;
 
-import com.knockingstar.domain.Greeting;
+import com.knockingstar.model.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Created by Ufuk on 20-09-15.
+ * @author Ömer Ufuk Efendio?lu
  */
 @Controller
 public class GreetingController {

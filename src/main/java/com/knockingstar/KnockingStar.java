@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Created by Ufuk on 19-09-15.
+ * @author Ömer Ufuk Efendio?lu
  */
 @SpringBootApplication
 public class KnockingStar {

@@ -1,7 +1,7 @@
-package com.knockingstar.domain;
+package com.knockingstar.model;
 
 /**
- * Created by Ufuk on 20-09-15.
+ * @author Ömer Ufuk Efendio?lu
  */
 public class Greeting {
 
