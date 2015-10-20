@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @author Ömer Ufuk Efendioğlu
+ * @author �mer Ufuk Efendio?lu
  */
 @Controller
 public class PostController {
