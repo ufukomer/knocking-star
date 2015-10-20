@@ -38,7 +38,7 @@ public class Post {
     private String image;
 
     @NotNull
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     private LocalDate date;
 
@@ -49,7 +49,6 @@ public class Post {
     @NotNull
     @Size(min = 3, max = 80)
     private String email;
-
 
     public long getId() {
         return id;
@@ -99,8 +98,8 @@ public class Post {
         this.image = image;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getDate() {
+        return date.toString();
     }
 
     public void setDate(LocalDate date) {

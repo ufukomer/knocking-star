@@ -418,3 +418,12 @@ neon-animated-pages {
     font-size: 15px;
     color: #757575;
 }
+
+#paragraph {
+    width: 60%;
+    min-height: 200px;
+    margin: 80px auto;
+    padding: 40px 0 20px 20px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px #888888;
+}

@@ -132,9 +132,12 @@
             </section>
             <section is="ripple-card" data-route="post-detail">
                 <div class="fit layout vertical center-center">
-                    <p id="paragraph"></p>
+                    <span id="paragraph"></span>
                     <bindable-link on-click="_onBackClick" bind-attr="">
-                        <paper-button raised>Read</paper-button>
+                        <paper-button class="read-button" ripple>
+                            <iron-icon icon="icons:arrow-back"></iron-icon>
+                            Back
+                        </paper-button>
                     </bindable-link>
                 </div>
             </section>
