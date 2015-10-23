@@ -6,7 +6,7 @@ import org.springframework.data.repository.Repository;
 import java.util.List;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ömer Ufuk Efendioglu
  */
 public interface PostRepository extends Repository<Post, Long> {
 

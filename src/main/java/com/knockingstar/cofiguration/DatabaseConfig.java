@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ömer Ufuk Efendioglu
  */
 @Configuration
 @EnableTransactionManagement

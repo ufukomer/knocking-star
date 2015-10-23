@@ -5,7 +5,7 @@ import com.knockingstar.model.Post;
 import java.util.List;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ömer Ufuk Efendioglu
  */
 public interface PostService {
 

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ömer Ufuk Efendioglu
  */
 @Entity
 @Table(name = "post")

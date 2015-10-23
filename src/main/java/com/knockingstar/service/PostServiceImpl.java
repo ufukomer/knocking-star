@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ömer Ufuk Efendioglu
  */
 @Component("cityService")
 @Transactional
