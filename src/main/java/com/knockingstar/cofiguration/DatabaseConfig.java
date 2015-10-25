@@ -1,7 +1,8 @@
 package com.knockingstar.cofiguration;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -16,20 +17,12 @@ import java.util.Properties;
  * @author Ömer Ufuk Efendioglu
  */
 @Configuration
+@EnableConfigurationProperties(HibernateProperties.class)
 @EnableTransactionManagement
 public class DatabaseConfig {
 
-    @Value("${hibernate.dialect}")
-    private String hibernateDialect;
-
-    @Value("${hibernate.show_sql}")
-    private String hibernateShowSql;
-
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hibernateHbm2ddlAuto;
-
-    @Value("${entitymanager.packagesToScan}")
-    private String packagesToScan;
+    @Autowired
+    private HibernateProperties hibernateProperties;
 
     @Bean
     @ConfigurationProperties(prefix = "db")
@@ -41,16 +34,16 @@ public class DatabaseConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
-        sessionFactoryBean.setPackagesToScan(packagesToScan);
+        sessionFactoryBean.setPackagesToScan(hibernateProperties.getPackagesToScan());
         sessionFactoryBean.setHibernateProperties(hibernateProperties());
         return sessionFactoryBean;
     }
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", hibernateDialect);
-        properties.put("hibernate.show_sql", hibernateShowSql);
-        properties.put("hibernate.hbm2ddl.auto", hibernateHbm2ddlAuto);
+        properties.put("hibernate.dialect", hibernateProperties.getDialect());
+        properties.put("hibernate.show_sql", hibernateProperties.getShowSql());
+        properties.put("hibernate.hbm2ddl.auto", hibernateProperties.getHbm2ddl());
         return properties;
     }
 
