@@ -1,6 +1,6 @@
 #Knocking Star
 
-Knocking Star is a portfolio and blogging site that contains various technologies:
+Knocking Star is a portfolio and blogging site that's created with various technologies:
   - Spring Framework
   - Polymer
   - Gradle
