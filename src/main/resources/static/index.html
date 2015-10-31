@@ -21,7 +21,7 @@
     <link rel="import" href="elements/elements.html">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/main.css">
 
     <style is="custom-style">
         [center] {
@@ -237,53 +237,6 @@
     </div>
 </div>
 
-<script>
-
-    document.addEventListener('WebComponentsReady', function () {
-
-        var rippler = document.getElementById('rippler');
-        var scope = document.querySelector('#app');
-
-        scope.dataReceived = function () {
-            console.log('Response data was received.');
-        };
-
-        scope._onPolymerClick = function () {
-            this.$.list.sharedElements = {
-                'ripple': rippler,
-                'reverse-ripple': rippler
-            };
-            $("paper-tab").fadeOut();
-            this.$.pages.selected = 'post-detail';
-        };
-
-        scope._onBackClick = function () {
-            $("paper-tab").fadeIn();
-            this.$.list.sharedElements = {
-                'ripple': rippler,
-                'reverse-ripple': rippler
-            };
-            this.$.pages.selected = 'posts';
-        }
-    });
-
-    /*function showPosts() {
-        var post = document.querySelector('up-slider');
-        post.show();
-    }
-    function hidePosts() {
-        var post = document.querySelector('up-slider');
-        post.hide();
-    }
-    function showProjects() {
-        var post = document.querySelector('right-slider');
-        post.show();
-    }
-    function hideProjects() {
-        var post = document.querySelector('right-slider');
-        post.hide();
-    }*/
-</script>
-<script src="script/main.js"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
