@@ -17,7 +17,7 @@ This site isn't working dynamically for now. Because Neon-animated-pages doesn't
 Feel free to open a pull request that fixes issues or improve my code somehow.
 
 ### Usage
- - Run ```gradle build``` command to build the project and install bower dependencies. 
+ - Run ```gradle build``` command or ```./gradlew build``` if you don't have gradle installed in your system to build the project and install bower dependencies. 
  - Replace [database configuration](https://github.com/ufukomer/knocking-star/blob/master/src/main/resources/application.properties) with yours.
  - Run ```gradle bootRun``` command to start web services and database connection.
 
