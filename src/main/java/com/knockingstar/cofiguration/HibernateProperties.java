@@ -3,7 +3,7 @@ package com.knockingstar.cofiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author Ömer Ufuk Efendio?lu
+ * @author Ã–mer Ufuk Efendioglu
  */
 @ConfigurationProperties(prefix = "hibernate",
         locations = "classpath:hibernate.properties")
