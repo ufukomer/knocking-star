@@ -11,7 +11,6 @@
 
 <dom-module id="project-card">
     <style>
-
         .card-content {
             width: 350px;
             height: 100px;
@@ -42,7 +41,6 @@
         }
     </style>
     <template>
-
         <iron-ajax id="binder"
                    auto
                    url='{{repoUrl}}'
@@ -53,13 +51,12 @@
         <paper-card heading="[[data.name]]">
             <div class="card-content">
                 <span>[[data.description]]</span>
-
             </div>
             <div class="card-actions">
                 <a href="{{data.html_url}}" target="_blank">
                     <paper-button class="link-button">
-                            <iron-icon icon="custom-icons:github"></iron-icon>
-                            Github
+                        <iron-icon icon="custom-icons:github"></iron-icon>
+                        Github
                     </paper-button></a>
                 <a href="{{data.homepage}}" target="_blank">
                 <paper-button class="link-button">
